@@ -33,7 +33,7 @@ int32_t start_http_proxy(int32_t s, char *ip, int32_t port, unsigned char option
 
   if (http_proxy_auth_mechanism != AUTH_BASIC && (http_proxy_auth_mechanism == AUTH_ERROR || http_proxy_buf == NULL)) {
     // send dummy request
-    sprintf(buffer, "GET %s HTTP/1.0\r\n%sUser-Agent: Mozilla/4.0 (Hydra)\r\n%s\r\n", url, host, header);
+    sprintf(buffer, "GET %s HTTP/1.0\r\n%sUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36\r\n%s\r\n", url, host, header);
     if (hydra_send(s, buffer, strlen(buffer), 0) < 0)
       return 3;
 
