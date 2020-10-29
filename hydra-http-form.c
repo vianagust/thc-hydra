@@ -1361,7 +1361,7 @@ ptr_header_node initialize(char *ip, unsigned char options, char *miscptr) {
   if (use_proxy == 1 && proxy_authentication[selected_proxy] != NULL) {
     // proxy with authentication
     add_header(&ptr_head, "Host", webtarget, HEADER_TYPE_DEFAULT);
-    add_header(&ptr_head, "User-Agent", "Mozilla 5.0 (Hydra Proxy Auth)", HEADER_TYPE_DEFAULT);
+    add_header(&ptr_head, "User-Agent", "Mozilla 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36", HEADER_TYPE_DEFAULT);
     proxy_string = (char *)malloc(strlen(proxy_authentication[selected_proxy]) + 10);
     if (proxy_string) {
       strcpy(proxy_string, "Basic ");
@@ -1384,7 +1384,7 @@ ptr_header_node initialize(char *ip, unsigned char options, char *miscptr) {
     if (use_proxy == 1) {
       // proxy without authentication
       add_header(&ptr_head, "Host", webtarget, HEADER_TYPE_DEFAULT);
-      add_header(&ptr_head, "User-Agent", "Mozilla/5.0 (Hydra Proxy)", HEADER_TYPE_DEFAULT);
+      add_header(&ptr_head, "User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36", HEADER_TYPE_DEFAULT);
       if (getcookie) {
         // doing a GET to get cookies
         if (cookie_request != NULL)
@@ -1397,7 +1397,7 @@ ptr_header_node initialize(char *ip, unsigned char options, char *miscptr) {
     } else {
       // direct web server, no proxy
       add_header(&ptr_head, "Host", webtarget, HEADER_TYPE_DEFAULT);
-      add_header(&ptr_head, "User-Agent", "Mozilla/5.0 (Hydra)", HEADER_TYPE_DEFAULT);
+      add_header(&ptr_head, "User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36", HEADER_TYPE_DEFAULT);
 
       if (getcookie) {
         // doing a GET to save cookies
