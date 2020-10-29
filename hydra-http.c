@@ -175,19 +175,19 @@ int32_t start_http(int32_t s, char *ip, int32_t port, unsigned char options, cha
     if (use_proxy == 1 && proxy_authentication[selected_proxy] != NULL)
       sprintf(buffer,
               "%s http://%s:%d%s HTTP/1.1\r\nHost: %s\r\nAuthorization: NTLM "
-              "%s\r\nProxy-Authorization: Basic %s\r\nUser-Agent: Mozilla/4.0 "
-              "(Hydra)\r\n%s\r\n",
+              "%s\r\nProxy-Authorization: Basic %s\r\nUser-Agent: Mozilla/5.0 "
+              "(Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36\r\n%s\r\n",
               type, webtarget, webport, miscptr, webtarget, buf1, proxy_authentication[selected_proxy], header);
     else {
       if (use_proxy == 1)
         sprintf(buffer,
                 "%s http://%s:%d%s HTTP/1.1\r\nHost: %s\r\nAuthorization: NTLM "
-                "%s\r\nUser-Agent: Mozilla/4.0 (Hydra)\r\n%s\r\n",
+                "%s\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36\r\n%s\r\n",
                 type, webtarget, webport, miscptr, webtarget, buf1, header);
       else
         sprintf(buffer,
                 "%s %s HTTP/1.1\r\nHost: %s\r\nAuthorization: NTLM "
-                "%s\r\nUser-Agent: Mozilla/4.0 (Hydra)\r\n%s\r\n",
+                "%s\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36\r\n%s\r\n",
                 type, miscptr, webtarget, buf1, header);
     }
 
