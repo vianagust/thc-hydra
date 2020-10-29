@@ -47,7 +47,7 @@ int32_t start_http_proxy_urlenum(int32_t s, char *ip, int32_t port, unsigned cha
 
   if (http_proxy_auth_mechanism == AUTH_ERROR) {
     // send dummy request
-    sprintf(buffer, "GET %s HTTP/1.0\r\n%sUser-Agent: Mozilla/4.0 (Hydra)\r\n%s\r\n", url, mhost, header);
+    sprintf(buffer, "GET %s HTTP/1.0\r\n%sUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36\r\n%s\r\n", url, mhost, header);
     if (hydra_send(s, buffer, strlen(buffer), 0) < 0)
       return 1;
 
@@ -77,7 +77,7 @@ int32_t start_http_proxy_urlenum(int32_t s, char *ip, int32_t port, unsigned cha
       hydra_tobase64((unsigned char *)buffer2, strlen(buffer2), sizeof(buffer2));
       sprintf(buffer,
               "GET %s HTTP/1.0\r\n%sProxy-Authorization: Basic "
-              "%s\r\nUser-Agent: Mozilla/4.0 (Hydra)\r\n%s\r\n",
+              "%s\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36\r\n%s\r\n",
               url, host, buffer2, header);
       if (debug)
         hydra_report(stderr, "C:%s\n", buffer);
@@ -118,7 +118,7 @@ int32_t start_http_proxy_urlenum(int32_t s, char *ip, int32_t port, unsigned cha
         // send the first..
         sprintf(buffer,
                 "GET %s HTTP/1.0\r\n%sProxy-Authorization: NTLM %s\r\nUser-Agent: "
-                "Mozilla/4.0 (Hydra)\r\nProxy-Connection: keep-alive\r\n%s\r\n",
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36\r\nProxy-Connection: keep-alive\r\n%s\r\n",
                 url, host, buf1, header);
         if (hydra_send(s, buffer, strlen(buffer), 0) < 0)
           return 1;
@@ -152,7 +152,7 @@ int32_t start_http_proxy_urlenum(int32_t s, char *ip, int32_t port, unsigned cha
         to64frombits(buf1, buf2, SmbLength((tSmbNtlmAuthResponse *)buf2));
         sprintf(buffer,
                 "GET %s HTTP/1.0\r\n%sProxy-Authorization: NTLM %s\r\nUser-Agent: "
-                "Mozilla/4.0 (Hydra)\r\nProxy-Connection: keep-alive\r\n%s\r\n",
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36\r\nProxy-Connection: keep-alive\r\n%s\r\n",
                 url, host, buf1, header);
         if (debug)
           hydra_report(stderr, "C:%s\n", buffer);
