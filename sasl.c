@@ -525,7 +525,7 @@ char *sasl_digest_md5(char *result, char *login, char *pass, char *buffer, char 
              "HEAD %s HTTP/1.0\r\n%sProxy-Authorization: Digest username=\"%s\", "
              "realm=\"%s\", response=\"%s\", nonce=\"%s\", cnonce=\"hydra\", "
              "nc=00000001, algorithm=%s, qop=auth, uri=\"%s\"\r\nUser-Agent: "
-             "Mozilla/4.0 (Hydra)\r\nConnection: keep-alive\r\n%s\r\n",
+             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36\r\nConnection: keep-alive\r\n%s\r\n",
              miscptr, webtarget, preplogin, realm, buffer, nonce, algo, miscptr, header);
   } else {
     if ((strstr(type, "imap") != NULL) || (strstr(type, "pop") != NULL) || (strstr(type, "smtp") != NULL) || (strstr(type, "ldap") != NULL) || (strstr(type, "xmpp") != NULL) || (strstr(type, "nntp") != NULL)) {
@@ -552,7 +552,7 @@ char *sasl_digest_md5(char *result, char *login, char *pass, char *buffer, char 
                      "Digest username=\"%s\", realm=\"%s\", response=\"%s\", "
                      "nonce=\"%s\", cnonce=\"hydra\", nc=00000001, algorithm=%s, "
                      "qop=auth, uri=\"%s\"\r\nProxy-Authorization: Basic "
-                     "%s\r\nUser-Agent: Mozilla/4.0 (Hydra)\r\nConnection: "
+                     "%s\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36\r\nConnection: "
                      "keep-alive\r\n%s\r\n",
                      type, webtarget, webport, miscptr, webtarget, preplogin, realm, buffer, nonce, algo, miscptr, proxy_authentication[selected_proxy], header);
           else {
@@ -561,16 +561,16 @@ char *sasl_digest_md5(char *result, char *login, char *pass, char *buffer, char 
                        "%s http://%s:%d%s HTTP/1.0\r\nHost: %s\r\nAuthorization: "
                        "Digest username=\"%s\", realm=\"%s\", response=\"%s\", "
                        "nonce=\"%s\", cnonce=\"hydra\", nc=00000001, algorithm=%s, "
-                       "qop=auth, uri=\"%s\"\r\nUser-Agent: Mozilla/4.0 "
-                       "(Hydra)\r\nConnection: keep-alive\r\n%s\r\n",
+                       "qop=auth, uri=\"%s\"\r\nUser-Agent: Mozilla/5.0 "
+                       "(Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36\r\nConnection: keep-alive\r\n%s\r\n",
                        type, webtarget, webport, miscptr, webtarget, preplogin, realm, buffer, nonce, algo, miscptr, header);
             else
               snprintf(result, 500,
                        "%s %s HTTP/1.0\r\nHost: %s\r\nAuthorization: Digest "
                        "username=\"%s\", realm=\"%s\", response=\"%s\", "
                        "nonce=\"%s\", cnonce=\"hydra\", nc=00000001, algorithm=%s, "
-                       "qop=auth, uri=\"%s\"\r\nUser-Agent: Mozilla/4.0 "
-                       "(Hydra)\r\nConnection: keep-alive\r\n%s\r\n",
+                       "qop=auth, uri=\"%s\"\r\nUser-Agent: Mozilla/5.0 "
+                       "(Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36)\r\nConnection: keep-alive\r\n%s\r\n",
                        type, miscptr, webtarget, preplogin, realm, buffer, nonce, algo, miscptr, header);
           }
         }
